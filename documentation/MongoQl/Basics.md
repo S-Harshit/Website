@@ -3,7 +3,7 @@ layout: plain
 title: Basics
 ---
 
-This page gives a basic overview of the MongoDB Query Language implementation used by Polypheny.
+This page gives a basic overview of the MongoDB Query Language adaptation used by Polypheny.
 
 ## Introduction
 
@@ -13,6 +13,10 @@ While a lot of functionality of the language are mapped to Polypheny, some is no
 
 ## Document Keys/References
 
-Keys used in documents need to be enclosed in double quotes ( " ). 
+Keys and references need to be enclosed in double quotes (`"`). 
+
+## Work In Progress
+The MongoDB Query Language documentation is heavily worked on at the movement, which means that parts can change without warning in the future.
+Additionally, there are still undocumented functionality, which will be added during this process.
 
 

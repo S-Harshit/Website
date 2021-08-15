@@ -8,16 +8,23 @@ This page describes the MongoDB Query Language dialect recognized by Polypheny-D
 {% highlight mql %}
 statement:
 db.collection (
-    query
+query
 |   insert
 |   update
 |   delete
 |   drop
 )
+| db. (
+    .getCollection( <name> )
+|   .createCollection( <name>, <options> )
+|   .createView( <view>, <source>, <pipeline>, <options> )
+|   .dropDatabase()
+)
+| use databaseName
 
 insert:
 .insert( <document>|<array> )
-|   .insertMany( <document> )
+|   .insertMany( <array> )
 
 update:
 .findAndModify( <filter> )
@@ -28,10 +35,10 @@ update:
 |   .updateOne( <filter>, <update>, <options> )
 |   .updateMany( <filter>, <update>, <options> )
 
-|   .renameCollection( <target>, <dropTarget>)
+|   .renameCollection( <target>, <dropTarget> )
 
 delete:
-.deleteOne( <filter> )
+    .deleteOne( <filter> )
 |   .deleteMany( <filter> )
 |   .findOneAndDelete( <filter>, <options> )¶
 
@@ -53,7 +60,10 @@ pipeline: <array>
 options: <document>
 target: <string>
 dropTarget: <boolean>
-<update>: <array>|<document>
+update: <array>|<document>
+name: <string>
+source: <string>
+view: <strin>
 
 {% endhighlight %}
 
