@@ -42,7 +42,9 @@ The Angular Live Development Server can be started using
 ./gradlew npm_start
 ```
 
-You should now be able to open the UI in your browser by entering the url [http://localhost:4200/](http://localhost:4200/). Please make sure you have a running instance of Polypheny-DB.
+You should now be able to open the UI in your browser by entering the url [http://localhost:4200/](http://localhost:4200/). Please make sure you have an instance of Polypheny-DB running in test mode (started using the `-testMode` argument).
+
+
 
 ## Testing
 Polypheny-UI is tested using the Cypress framework. With Cypress, tests are performing assertions using a real browser, the same way a real user would use the software.
@@ -65,12 +67,12 @@ Tests are located in the `cypress/integration/` folder.
 ### Setting up backend
 Cypress assumes that both Polypheny-UI and Polypheny-DB are up and running in test mode.
 
-To run Polypheny-DB in test mode Pass ```-testMode``` parameter in run configuration of your IDE.
+To run Polypheny-DB in test mode, pass the ```-testMode``` parameter in the run configuration of your IDE.
 
 Some tests require creating schemas and tables. Queries for such cases should be added in 
 ```test-helper/src/main/java/org/polypheny/ui/test/TestHelper.java```.
 
-**Important:** ```TestHelper.java``` needs to be executed after running Polypheny-DB and before running Cypress so that the required tables or schema can be created.
+**Important:** ```TestHelper.java``` needs to be executed after running Polypheny-DB and before running Cypress so that the required tables or schemas can be created.
 
 
 ### Cypress can be started using
