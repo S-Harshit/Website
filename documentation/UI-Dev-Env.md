@@ -72,6 +72,8 @@ To run Polypheny-DB in test mode, pass the ```-testMode``` parameter in the run 
 Some tests require creating schemas and tables. Queries for such cases should be added in 
 ```test-helper/src/main/java/org/polypheny/ui/test/TestHelper.java```.
 
+The test-helper is started by executing `./gradlew run` (Linux / macOS) or `gradlew.bat run` (Windows) in the `test-helper` directory.
+
 **Important:** ```TestHelper.java``` needs to be executed after running Polypheny-DB and before running Cypress so that the required tables or schemas can be created.
 
 
